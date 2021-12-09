@@ -13,16 +13,19 @@
 
       <!-- <el-button @click="startHacking">Start</el-button> -->
       
+	  <Foot></Foot>
   </div>
 </template>
 
 <script> 
 	
 import Head from "./components/Head.vue"
+import Foot from "./components/Foot.vue"
 
 export default {
 	components:{
-		Head
+		Head,
+		Foot
 	},
 	data(){
 	  return {
