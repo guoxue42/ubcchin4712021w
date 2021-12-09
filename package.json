@@ -3,7 +3,7 @@
   "description": "A Vue.js project",
   "author": "yi.shyang@ele.me",
   "private": true,
-  "homepage": "https://guoxue15.github.io/ubcchin4712021w"
+  "homepage": "https://guoxue15.github.io/ubcchin4712021w",
   "scripts": {
     "dev": "webpack-dev-server --inline --hot --env.dev",
     "build": "rimraf dist && webpack -p --progress --hide-modules"
