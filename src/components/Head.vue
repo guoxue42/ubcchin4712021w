@@ -24,7 +24,7 @@
 			</a>
 	  </el-menu-item>
 	  
-	  <el-menu-item index="/"> CHIN 471 古代汉语 </el-menu-item>
+	  <el-menu-item index="/"> CHIN 491 古代汉语 </el-menu-item>
 	  
 	  <el-menu-item index="1">首页</el-menu-item>
 	  <el-submenu index="2">

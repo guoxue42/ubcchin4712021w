@@ -7,8 +7,30 @@
 	<el-carousel indicator-position="outside" height="520px">
 	  <el-carousel-item v-for="item in carousel" :key="item.idx">
 	    <!-- <h3>{{ item.url }}</h3> -->
-		<img :src="item.url" height=480></img>
-		<!-- 1250 x 520 -->
+
+		<div >
+			<img style="position:relative;" :src="item.url" height=480></img>
+			<div v-if="item.idx != 1">
+				<p style="position:absolute; right:300px;top:80px;
+					color:#ffff7f;
+					font-size:20px;width:4px;height:100px;">
+					{{item.text}}</p>
+			</div>
+			<div v-else>
+				<p style="position:absolute; right:250px;top:80px;
+					color:#aaffff;
+					font-size:20px;width:4px;height:100px;">
+					{{item.text}}</p>
+				<p style="position:absolute; right:300px;top:80px;
+					color:#aaffff;
+					font-size:20px;width:4px;height:100px;">
+					{{item.text2}}</p>
+			</div>
+			
+			
+		</div>
+		
+		<!-- 1250 x 520 左右大小-->
 	  </el-carousel-item>
 	</el-carousel>
 	
@@ -73,12 +95,12 @@
 	>
 		<img src="../../assets/等待.gif"></img>
 		<el-row>
-		  <el-button>夏商周</el-button>
-		  <el-button type="primary">春秋</el-button>
-		  <el-button type="success">战国</el-button>
-		  <el-button type="info">秦汉</el-button>
-		  <el-button type="warning">古代汉语语法</el-button>
-		  <el-button type="danger">作品锦集</el-button>
+		  <el-button @click='buttonRoute("3-1")'>夏商周</el-button>
+		  <el-button type="primary" @click='buttonRoute("4-1")'>春秋</el-button>
+		  <el-button type="success" @click='buttonRoute("5-1")'>战国</el-button>
+		  <el-button type="info" @click='buttonRoute("6-1")'>秦汉</el-button>
+		  <el-button type="warning" @click='buttonRoute("7-1")'>古代汉语语法</el-button>
+		  <el-button type="danger" @click='buttonRoute("2-1")'>作品锦集</el-button>
 		</el-row>
 	</el-main>
 	</el-container>
@@ -90,7 +112,7 @@
 		<el-main class="fourthBlock" style="font-family: PingFang SC;">
 			
 			<h1>​致谢</h1>
-			<!-- <h3>感谢指导老师刘学顺以及CHIN471全体学生的积极参与</h3>​ -->
+			<!-- <h3>感谢指导老师刘学顺以及CHIN491全体学生的积极参与</h3>​ -->
 
 		</el-main>
 	</el-container>
@@ -120,12 +142,25 @@
 	// import el-image
 	
 	export default {
+		methods:{
+			buttonRoute(e){
+				// console.log(e,f)
+				// this.$router.push(e)
+			}
+		},
 		data(){
 		  return {
 			  carousel: [
-				  {url: require("../../assets/曲阜.jpeg"),idx: 0},
-				  {url: require("../../assets/国画_刘宗汉.jpeg"),idx: 1},
-				  {url: require("../../assets/高山流水.jpg"),idx: 2}
+				  {url: require("../../assets/曲阜.jpeg"),
+					text:"子曰 ：学而时习之不亦乐乎",
+					idx: 0},
+				  {url: require("../../assets/国画_刘宗汉.jpeg"),
+					text:"人法地，地法天，天法道",
+					text2:"道法自然《 道德经 》",
+					idx: 1},
+				  {url: require("../../assets/高山流水.jpg"),
+					text:"子曰：逝者如斯夫，不舍昼夜",
+					idx: 2}
 			  ],
 			  backgroundImage: require("../../assets/梅花.jpg"),
 			  url: require("../../assets/孔子1.jpg"),
