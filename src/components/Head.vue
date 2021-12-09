@@ -12,15 +12,20 @@
 		:background-color="backgroundColor"
 		class="el-menu-main"
 		>
+	  
 	  <el-menu-item index="0" class="taiji">
 		  <a href="https://asia.ubc.ca/" target="_blank">
 		  
 		  <img href="https://asia.ubc.ca/"
-		  	src="../assets/ubc_log.webp.jpg" 
+		  	src="../assets/太极.jpg" 
+			style="transform:rotate(180deg);"
 		  	height="60" ></img>
 			
 			</a>
 	  </el-menu-item>
+	  
+	  <el-menu-item index="/"> CHIN 471 古代汉语 </el-menu-item>
+	  
 	  <el-menu-item index="1">首页</el-menu-item>
 	  <el-submenu index="2">
 	    <template slot="title">作品锦集</template>

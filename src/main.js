@@ -25,9 +25,16 @@ VueRouter.prototype.push = function push(location) {
 
 import Bar from "./components/Bar.vue"
 import Foo from "./components/Foo.vue"
-import Page1 from "./components/Page1.vue"
+import Page1 from "./components/Page/Page1.vue"
+// import Page2_1 from "./components/Page/Page2_1.vue"
+// import Page2_2 from "./components/Page/Page2_2.vue"
+// import Page2_2 from "./components/Page/Page2_2.vue"
+// import Page2_4_1 from "./components/Page/Page2_4_1.vue"
+// import Page4_1 from "./components/Page/Page4_1.vue"
+
 
 const routes = [
+  {path: '/', redirect: '1'},
   { path: '/foo', component: Foo },
   { path: '/bar', component: Bar },
   { path: '/1', component: Page1 },
@@ -37,6 +44,16 @@ const routes = [
 ]
 
 const router = new VueRouter({ routes });
+
+
+
+
+//OTHER IMPORTS
+import {Image} from 'element-ui'
+// Vue.component(Image.name, Image);
+
+
+
 
 
 new Vue({
