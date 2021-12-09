@@ -3,13 +3,15 @@
   "description": "A Vue.js project",
   "author": "yi.shyang@ele.me",
   "private": true,
+  "homepage": "https://guoxue15.github.io/ubcchin4712021w"
   "scripts": {
     "dev": "webpack-dev-server --inline --hot --env.dev",
     "build": "rimraf dist && webpack -p --progress --hide-modules"
   },
   "dependencies": {
     "element-ui": "^2.3.4",
-    "vue": "^2.5.16"
+    "vue": "^2.5.16",
+    "vue-router": "^3.5.3"
   },
   "engines": {
     "node": ">=6"
