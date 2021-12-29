@@ -3,6 +3,8 @@ const webpack = require('webpack')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const url = require('url')
 const publicPath = ''
+const { VueLoaderPlugin } = require('vue-loader')
+
 
 module.exports = (options = {}) => ({
   entry: {
@@ -37,7 +39,16 @@ module.exports = (options = {}) => ({
             limit: 10000
           }
         }]
-      }
+      },
+	  {
+	    test: /\.(mp3|mp4|m4a|MOV)(\?.+)?$/,
+	    use: [{
+	      loader: 'url-loader',
+	      options: {
+	        limit: 10000
+	      }
+	    }]
+	  }
     ]
   },
   plugins: [
@@ -47,6 +58,7 @@ module.exports = (options = {}) => ({
     new HtmlWebpackPlugin({
       template: 'src/index.html'
     })
+	// new VueLoaderPlugin()
   ],
   resolve: {
     alias: {

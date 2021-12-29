@@ -1,12 +1,25 @@
 import Vue from 'vue'
 import ElementUI from 'element-ui'
-import 'element-ui/lib/theme-chalk/index.css'
+
 import App from './App.vue'
 
 import VueRouter from 'vue-router'
 
+import VueTouchRipple from 'vue-touch-ripple'
+
+// import styles
+import 'vue-touch-ripple/dist/vue-touch-ripple.css'
+import 'element-ui/lib/theme-chalk/index.css'
+
 Vue.use(VueRouter)
 Vue.use(ElementUI)
+Vue.use(VueTouchRipple, /* {
+  // default global options
+  color: '#fff',
+  opacity: 0.3,
+  speed: 1,
+  transition: 'ease'
+} */)
 
 
 
@@ -25,22 +38,15 @@ VueRouter.prototype.push = function push(location) {
 
 import Bar from "./components/Bar.vue"
 import Foo from "./components/Foo.vue"
-import Page1 from "./components/Page/Page1.vue"
-// import Page2_1 from "./components/Page/Page2_1.vue"
-// import Page2_2 from "./components/Page/Page2_2.vue"
-// import Page2_2 from "./components/Page/Page2_2.vue"
-// import Page2_4_1 from "./components/Page/Page2_4_1.vue"
-// import Page4_1 from "./components/Page/Page4_1.vue"
-
+import GuHanYu from "./components/Page/GuHanYu.vue"
+import LangSong from "./components/Page/LangSong.vue"
+import XinJie from "./components/Page/XinJie.vue"
 
 const routes = [
-  {path: '/', redirect: '1'},
-  { path: '/foo', component: Foo },
-  { path: '/bar', component: Bar },
-  { path: '/1', component: Page1 },
-  { path: '/2-1', component: Bar },
-  { path: '/2-2', component: Foo },
-  { path: '/2-3', component: Bar },
+  {path: '*', redirect: 'guHanYu'},
+  { path: '/guHanYu', component: GuHanYu },
+  { path: '/langSong', component: LangSong },
+  { path: '/xinJie', component: XinJie },
 ]
 
 const router = new VueRouter({ routes });

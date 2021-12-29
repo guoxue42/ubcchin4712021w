@@ -1,0 +1,1 @@
+ls *mov|while read id;do (ffmpeg -i  "$id" -vcodec libx264 -preset fast -crf 20 -y -vf "scale=1920:-1" -acodec libmp3lame -ab 128k   "${id%%.*}.mp4"  );done

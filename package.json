@@ -1,9 +1,9 @@
 {
-  "name": "element-starter",
+  "name": "CHIN491",
   "description": "A Vue.js project",
   "author": "yi.shyang@ele.me",
   "private": true,
-  "homepage": "https://guoxue15.github.io/ubcchin4712021w",
+  "homepage": "https://guoxue42.github.io/ubcchin4712021w",
   "scripts": {
     "dev": "webpack-dev-server --inline --hot --env.dev",
     "build": "rimraf dist && webpack -p --progress --hide-modules"
@@ -11,7 +11,8 @@
   "dependencies": {
     "element-ui": "^2.3.4",
     "vue": "^2.5.16",
-    "vue-router": "^3.5.3"
+    "vue-router": "^3.5.3",
+    "vue-touch-ripple": "^3.0.0"
   },
   "engines": {
     "node": ">=6"
@@ -28,7 +29,7 @@
     "rimraf": "^2.5.4",
     "style-loader": "^0.13.2",
     "url-loader": "^0.5.8",
-    "vue-loader": "^13.3.0",
+    "vue-loader": "^13.7.3",
     "vue-template-compiler": "^2.5.16",
     "webpack": "^2.4.1",
     "webpack-dev-server": "^2.4.2"

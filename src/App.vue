@@ -7,13 +7,20 @@
 	<!--      <router-link to="/foo">Go to Foo</router-link>
     <router-link to="/bar">Go to Bar</router-link> -->
 	<!-- <div style="top:100px;"> -->
+		<transition name="fade">
+			
 		<router-view></router-view>
+		
+		</transition>
 	<!-- </div> -->
    <!-- <img src="./assets/龙凤.png"></img> -->
 
       <!-- <el-button @click="startHacking">Start</el-button> -->
       
+	  <!-- style="position:fixed; bottom:0;" -->
+	  <!-- <div style="height:200px"></div> -->
 	  <Foot></Foot>
+	  
   </div>
 </template>
 
@@ -52,6 +59,8 @@ export default {
 	#app {
 		font-family: Helvetica, sans-serif;
 		text-align: center;
+		margin-left:-10px;
+		margin-top:-10px;
 	}
 
 </style>
