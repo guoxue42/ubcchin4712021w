@@ -8,7 +8,7 @@
 
 	
 	<!-- #2 介绍 -->
-	<div style="height:40px"></div>
+	<div style="height:150px"></div>
 	<!-- <img src="../../assets/孔子1.jpg"></img> -->
 <!-- 	<el-container >
 	  <el-aside width="650px" >
@@ -59,16 +59,17 @@
 	<el-main class="thirdBlock">
 		<!-- <img src="../../assets/等待.gif"></img> -->
 		<el-row>
-			<img height=150 src="../../assets/Logo4.png"></img>
+			<!-- <h1 style='font-size:200px;color:#ffffff;font-family:"汉仪行楷";'>信而好古，述而有作</h1> -->
+			<img height=200 src="../../assets/Logo5.png"></img>
 		</el-row>
 		<!-- <el-image src=></el-image> -->
 		<el-row :gutter="20">
 		  <el-col :span="22" :offset="1">
-			  <p style='font-size:30px; color:#ffffff;
+			  <p v-html="this.开头" style='font-size:60px; margin-top:50px;color:#ffffff;
 			  text-align:left; font-weight:bold;
 			  font-family:"宋体"'>
 			  <!--空格-->
-			  	 {{this.开头}}
+			  	<!-- {{this.开头}} -->
 			  </p>
 			  
 		  </el-col>
@@ -162,14 +163,14 @@
 			  srcList: [
 				  require("../../assets/孔子1.jpg")
 			  ],
-			  开头: "先秦两汉时期，中华文化璀璨夺目，诸子百家辉映古今。\
+			  开头: "&nbsp;&nbsp;先秦两汉时期，中华文化璀璨夺目，诸子百家辉映古今。\
 				满怀对传统文化的深情，同学们决定选修中文491。诵读《论语》\
-				《孟子》，恰似聆听仁者谆谆教诲；品味《老子》《庄子》，\
-				宛如面受先哲殷殷释惑。孔子说：“信而好古，述而不作。”\
-				时代发展到了二十一世纪，同学们不仅慨然以传承中华文化为使命，\
-				而且毅然吟诵经典、书写心得，表达对传统文化的厚爱。\
-				谨把同学们的优秀作品汇集为《信而好古，述而有作》\
-				以纪念这学期共同研读古文的美好时光。",
+《孟子》，恰似聆听仁者谆谆教诲；品味《老子》《庄子》\
+宛如面受先哲殷殷释惑。孔子说：“信而好古，述而不作。”\
+时代发展到了二十一世纪，同学们不仅慨然以传承中华文化为使命，\
+而且毅然吟诵经典、书写心得，表达对传统文化的厚爱。\
+谨把同学们的优秀作品汇集为《信而好古，述而有作》\
+以纪念这学期共同研读古文的美好时光。",
 		  }
 		},
 	}	

@@ -29,6 +29,16 @@
 		  <el-menu-item index="langSong">古文朗诵</el-menu-item>
 		  <el-menu-item index="xinJie">古文新解</el-menu-item>
 		
+		<el-menu-item index="0" class="taiji">
+					  <img 
+					    class="long"
+						style=""
+						src="../assets/Long.png" 
+						height="100" ></img>
+						
+						</a>
+		</el-menu-item>
+		
 		</el-menu>
 		
 		
@@ -94,6 +104,8 @@
 		margin-left:40px;
 		margin-top:10px;
 		font-family:"汉仪行楷";
+		left:4.5%;
+		
 	}
 	el-menu-item{
 		/* opacity: 0.2; */
@@ -103,6 +115,7 @@
 		/* left:100%; */
 		opacity: 0.8;
 		/* left:40%; */
+		text-align:center;
 	}
 	.el-menu-main{
 		width:1000%;
