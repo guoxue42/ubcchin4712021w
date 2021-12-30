@@ -1,5 +1,5 @@
 <template>
-  <div id="app">
+  <div id="app" @click="clickedEvent">
 
 
   <Head style="position:fixed;z-index: 4;"></Head>
@@ -36,7 +36,8 @@ export default {
 	},
 	data(){
 	  return {
-		  activeIndex: "1"
+		  activeIndex: "1",
+		  
 	  }
 	},
 	methods: {
@@ -50,7 +51,10 @@ export default {
 			message: 'We\'ve laid the ground work for you. It\'s time for you to build something epic!',
 			duration: 5000
 		  })
-		}
+		},
+		   clickedEvent(){
+			   console.log("按了")
+		   }
 		}
 }
 </script>
@@ -62,5 +66,5 @@ export default {
 		margin-left:-10px;
 		margin-top:-10px;
 	}
-
+@import './font/font.css'
 </style>

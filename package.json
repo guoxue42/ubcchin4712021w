@@ -9,7 +9,7 @@
     "build": "rimraf dist && webpack -p --progress --hide-modules"
   },
   "dependencies": {
-    "element-ui": "^2.3.4",
+    "element-ui": "^2.15.7",
     "vue": "^2.5.16",
     "vue-router": "^3.5.3",
     "vue-touch-ripple": "^3.0.0"

@@ -54,20 +54,33 @@
 	 -->
 	 
 	<!-- #3 转页面 -->
-	<div style="height:150px"></div>
+	<div style="height:50px"></div>
 
 	<el-main class="thirdBlock">
 		<!-- <img src="../../assets/等待.gif"></img> -->
 		<el-row>
-			<img src="../../assets/Logo4.png"></img>
+			<img height=150 src="../../assets/Logo4.png"></img>
 		</el-row>
 		<!-- <el-image src=></el-image> -->
-		<el-row>
+		<el-row :gutter="20">
+		  <el-col :span="22" :offset="1">
+			  <p style='font-size:30px; color:#ffffff;
+			  text-align:left; font-weight:bold;
+			  font-family:"宋体"'>
+			  <!--空格-->
+			  	 {{this.开头}}
+			  </p>
+			  
+		  </el-col>
+		</el-row>
+		
+		<el-row >
+			
 		  <!-- <el-button round type="warning" @click='buttonRoute("guHanYu")'>首页</el-button>
 		  -->
-		  <el-button round type="primary" @click='buttonRoute("langSong")'>古文朗诵</el-button>
+		  <!-- <el-button round type="primary" @click='buttonRoute("langSong")'>古文朗诵</el-button>
 		  <el-button round type="success" @click='buttonRoute("xinJie")'>古文新解</el-button>
-		  <!-- <el-button type="info" @click='buttonRoute("6-1")'>秦汉</el-button>
+		 --><!-- <el-button type="info" @click='buttonRoute("6-1")'>秦汉</el-button>
 		  <el-button type="warning" @click='buttonRoute("7-1")'>古代汉语语法</el-button>
 		  <el-button type="danger" @click='buttonRoute("2-1")'>作品锦集</el-button> -->
 		</el-row>
@@ -76,14 +89,14 @@
 	
 	
 	<!-- #1 图片 -->
-	<div style="height:300px"></div>
-	<el-carousel indicator-position="outside" height="500px">
+	<!-- <div style="height:300px"></div> -->
+<!-- 	<el-carousel indicator-position="outside" height="400px">
 		
 	  <el-carousel-item v-for="item in carousel" :key="item.idx">
 		<touch-ripple :speed="1" :opacity="0.3" color="#fff" transition="ease">
 		
 		<div >
-			<img style="position:relative;" :src="item.url" height=500></img>
+			<img style="position:relative;" :src="item.url" height=400></img>
 			<div v-if="item.idx != 1">
 				<p style="position:absolute; right:300px;top:80px;
 					color:#ffff7f;
@@ -109,7 +122,7 @@
 	  </el-carousel-item>
 	</el-carousel>
 	
-	
+	 -->
 
 	</div>
 </template>
@@ -148,7 +161,15 @@
 			  url: require("../../assets/孔子1.jpg"),
 			  srcList: [
 				  require("../../assets/孔子1.jpg")
-			  ]
+			  ],
+			  开头: "先秦两汉时期，中华文化璀璨夺目，诸子百家辉映古今。\
+				满怀对传统文化的深情，同学们决定选修中文491。诵读《论语》\
+				《孟子》，恰似聆听仁者谆谆教诲；品味《老子》《庄子》，\
+				宛如面受先哲殷殷释惑。孔子说：“信而好古，述而不作。”\
+				时代发展到了二十一世纪，同学们不仅慨然以传承中华文化为使命，\
+				而且毅然吟诵经典、书写心得，表达对传统文化的厚爱。\
+				谨把同学们的优秀作品汇集为《信而好古，述而有作》\
+				以纪念这学期共同研读古文的美好时光。",
 		  }
 		},
 	}	
@@ -168,7 +189,9 @@
 		/* background-image: url(../../assets/高山流水.jpg); */
 		/* background-image: url(../../assets/仙鹤.jpg); */
 		background-image: url(../../assets/长城2.jpg);
+		/* background-image: url(../../assets/MicrosoftTeams-image.png); */
 		position:fixed;
+		/* opacity:0.7; */
 		z-index: -1;
 	}
 	

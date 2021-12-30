@@ -1,7 +1,7 @@
 <template>
-	<div class="fourthBlock">
+	<div class="fourthBlock" >
 	<!-- #4 感谢页面 -->
-	<div style="height:40px"></div>
+	<!-- <div style="height:40px"></div> -->
 <!-- 	<el-container>
 		<el-main class="thirdBlock" style="font-family: PingFang SC;">
 			
@@ -13,18 +13,21 @@
 	
 	<!-- #5 感谢页面 -->
 	<div>
-	<el-container >
+	<el-container :class="{textColorYang: textColorYang, 
+		textColorYin: textColorYin}">
 		<el-main style="text-align:left;">
-			<div style="height:10px;"></div>
+
+			<!-- <div style="height:10px;"></div> -->
+			<!-- todos (transparent ) -->
 			<img href="https://asia.ubc.ca/"
-				src="../assets/ubc_log.webp.jpg" 
+				src="../assets/ubc_无背景.png" 
 				height="120" ></img>
 				<br>
-			© UBC CHIN491 2021W.
+				<h1 >© UBC CHIN491 2021W. </h1>
 		</el-main>
-		<el-main class="thirdBlock" style="font-family: PingFang SC;">
+		<el-main style="text-align:left;" class="thirdBlock" >
 			
-			<h1>​致谢</h1>
+			<h1 >​致谢</h1>
 			<h3>感谢指导老师刘学顺以及CHIN491全体学生的积极参与</h3>​
 		</el-main>
 		<el-main>
@@ -39,9 +42,44 @@
 </template>
 
 <script>
+export default {
+	data(){
+		return{}
+	},
+	computed:{
+		routePath:function(){
+		  return this.$route.path
+		},
+		textColorYang:function(){
+			return this.routePath!="/xinJie";
+		},
+		textColorYin:function(){
+			return this.routePath=="/xinJie";
+		}
+	},
+	methods:{
+		clickedEvent:function(){
+			console.log("百")
+			console.log(this.$route.path)
+		}
+	}
+}
 </script>
 
 <style scoped>
+	
+	.textColorYin{
+		color:#000000;
+	}
+	.textColorYang{
+		color:#FFFFFF;
+	}
+/* 	h1{
+		color:#FFFFFF;
+	}
+	h3{
+		color:#FFFFFF;
+	} */
 	
 	.fourthBlock{
 		position:relative;
@@ -52,6 +90,6 @@
 		left:0px;
 		margin-bottom:-1800px;
 		bottom:-10px;
-		background-color:#99A9BF;
+		/* background-color:#99A9BF; */
 	}
 </style>

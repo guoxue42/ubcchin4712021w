@@ -44,38 +44,29 @@
 		  return {
 			  activeIndex: "1",
 			  backgroundColor: "#ffffff",
+			  scrollUpID: null
 		  }
 		},
 		methods: {
 			handleSelect(a){
 				
-				
-				clearInterval(() => {
-						document.documentElement.scrollTop = 100;
-				}, 100)
-				// console.log(a)
-				// switch(a){
-				// 	case 'langSong':
-					    
-				// 	    break;
-				// 	case 'xinJie':
-					    
-				// 	    break;
-				// 	case 'guHanYu':
-				// 	default:
-				// 		console.log("here")
-				// 		break;
-				// }
-				
-				
-				
-				// this.$notify({
-				// 			title: '诺！',
-				// 			type: 'success',
-				// 			// dangerouslyUseHTMLString: true,
-				// 			message: '正为君获取新的页面!',
-				// 			duration: 2000
-				// })
+				// this.scrollUpID = setInterval(() => {
+				// 	console.log(document.documentElement.scrollTop)
+				// 		document.documentElement.scrollTop -= 10;
+				// 		if(document.documentElement.scrollTop <= 0){
+				// 			clearInterval(this.scrollUpID)
+				// 		}
+				// }, 100, this)
+				// console.log(document.documentElement.scrollTop)
+			document.documentElement.scrollTop = 0;
+		
+				this.$notify({
+							title: '诺！',
+							type: 'success',
+							// dangerouslyUseHTMLString: true,
+							message: '正为君请新的页面!',
+							duration: 1500
+				})
 			},
 		}
 	}
@@ -99,10 +90,10 @@
 		height:106px;
 		line-height: 106px;
 		/* color:red; */
-		font-size:30px;
+		font-size:35px;
 		margin-left:40px;
 		margin-top:10px;
-		font-family:"新宋体";
+		font-family:"汉仪行楷";
 	}
 	el-menu-item{
 		/* opacity: 0.2; */

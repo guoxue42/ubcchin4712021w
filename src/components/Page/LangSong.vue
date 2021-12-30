@@ -58,9 +58,9 @@
 
 	<el-main class="thirdBlock">
 		<!-- <img src="../../assets/等待.gif"></img> -->
-		<el-row>
+<!-- 		<el-row>
 			<img src="../../assets/Logo4.png"></img>
-		</el-row>
+		</el-row> -->
 		<el-row>
 				<!-- <div style="height:150px"></div> -->
 		</el-row>
@@ -76,12 +76,62 @@
 		</el-row>
 	</el-main>
 
-	<el-main>
+   
+
+	<!-- #1 图片 -->
+	<div style="height:120px"></div>
+	<el-carousel arrow="always" indicator-position="outside" 
+		height="450px" :autoplay="false">
+		
+	  <el-carousel-item  v-for="item in carousel" :key="item.idx">
+		<!-- <touch-ripple :speed="1" :opacity="0.3" color="#fff" transition="ease"> -->
+		
+		<div >
+			
+			<el-main class="thirdBlock">
+				<el-row>
+					<div style="font-size:40px;font-family:'汉仪行楷';">{{item.text}}</div>
+				</el-row>
+				<el-row>
+					<div style="font-size:20px;">{{item.text2}}</div>
+				</el-row>
+				<el-row :gutter="20">
+				  <el-col :span="22" :offset="1">
+					<p style="font-size:15px;margin-top:5px;">朗诵者：{{item.zuozhe}}</p>
+					<p style="font-size:25px;margin-top:10px;font-family:'';">{{item.其它内容}}</p>
+				  </el-col>
+				</el-row>
+			</el-main>
+			
+			<div v-if="item.type == 'video'">
+						<!-- <div style="height:50px"></div> -->
+				<video height=330 style="margin-top:-30px;" :src="item.url" controls="controls"></video>
+			</div>
+			<div v-if="item.type == 'audio'">
+					<!-- <div style="height:150px"></div> -->
+				<audio height=330 controls :src="item.url"></audio>
+			</div>		
+			<!-- <p style="position:absolute; left:600px;top:80px;
+				color:#ffff7f;
+				font-size:20px;width:4px;height:100px;">
+				{{item.text}}</p> -->
+			
+			
+		</div>
+		<!-- </touch-ripple> -->
+		
+		
+	  </el-carousel-item>
+	</el-carousel>
+	
+	
+
+<!-- 	<el-main>
 		<el-row>
-			<video height=380; src="../../assets/作品/惠子相梁何思炘.mp4" controls="controls"></video>
+			<video height=380; :src='require("../../assets/作品/惠子相梁何思炘.mp4")' controls="controls"></video>
 		</el-row>
 		<el-row>
-			<video height=380; src="../../assets/作品/道德经何思然.mp4" controls="controls"></video>
+			<video height=380; :src='require("../../assets/作品/道德经何思然.mp4")' controls="controls"></video>
 		</el-row>
 		<el-row>
 			<audio controls :src="require('../../assets/作品/劝学严旭.mp3')"></audio>
@@ -93,43 +143,9 @@
 			<audio controls :src="require('../../assets/作品/鱼我所欲也颜莘桐.mp3')"></audio>
 		</el-row>
 	</el-main>
-	
-	
-	<!-- #1 图片 -->
-<!-- 	<div style="height:300px"></div>
-	<el-carousel indicator-position="outside" height="500px">
-		
-	  <el-carousel-item v-for="item in carousel" :key="item.idx">
-		<touch-ripple :speed="1" :opacity="0.3" color="#fff" transition="ease">
-		
-		<div >
-			<img style="position:relative;" :src="item.url" height=500></img>
-			<div v-if="item.idx != 1">
-				<p style="position:absolute; right:300px;top:80px;
-					color:#ffff7f;
-					font-size:20px;width:4px;height:100px;">
-					{{item.text}}</p>
-			</div>
-			<div v-else>
-				<p style="position:absolute; right:250px;top:80px;
-					color:#aaffff;
-					font-size:20px;width:4px;height:100px;">
-					{{item.text}}</p>
-				<p style="position:absolute; right:300px;top:80px;
-					color:#aaffff;
-					font-size:20px;width:4px;height:100px;">
-					{{item.text2}}</p>
-			</div>
-			
-			
-		</div>
-		</touch-ripple>
-		
-		
-	  </el-carousel-item>
-	</el-carousel>
-	
 	 -->
+	
+	
 
 	</div>
 </template>
@@ -146,23 +162,41 @@
 		},
 		data(){
 		  return {
+			  // todos
 			  carousel: [
-				   {url: require("../../assets/国画_刘宗汉.jpeg"),
-					text:"子曰 ：学而时习之不亦乐乎",
-					idx: 0},
-				   {url: require("../../assets/长城.jpg"),
-					text:"子曰 ：学而时习之不亦乐乎",
-					idx: 1},
-				 //  {url: require("../../assets/曲阜.jpeg"),
-					// text:"子曰 ：学而时习之不亦乐乎",
-					// idx: 0},
-				 //  {url: require("../../assets/国画_刘宗汉.jpeg"),
-					// text:"人法地，地法天，天法道",
-					// text2:"道法自然《 道德经 》",
-					// idx: 1},
-				 //  {url: require("../../assets/高山流水.jpg"),
-					// text:"子曰：逝者如斯夫，不舍昼夜",
-					// idx: 2}
+				   {url: require("../../assets/作品/惠子相梁何思炘.mp4"),
+						text:"惠子相梁·庄子",
+						zuozhe:"何思炘",
+						type:"video",
+						idx: 0},
+				   {url: require("../../assets/作品/道德经何思然.mp4"),
+						text:"道德经·老子",
+						zuozhe:"何思然",
+						type:"video",
+						idx: 1},
+					{url: require('../../assets/作品/劝学严旭.mp3'),
+						text:"劝学",
+						text2:"荀子",
+						zuozhe:"严旭",
+						type:"audio",
+						其它内容:"君子曰：学不可以已。\
+					青，取之于蓝，而青于蓝；冰，水为之，而寒于水。",
+						idx: 2},
+					{url: require('../../assets/作品/劝学张睿焘.mp3'),
+						text:"劝学",
+						text2:"荀子",
+						zuozhe:"张睿焘",
+						其它内容:"吾尝终日而思矣，不如须臾之所学也；吾尝跂而望矣，\
+						不如登高之博见也。",
+						type:"audio",
+						idx: 3},
+					{url: require('../../assets/作品/鱼我所欲也颜莘桐.mp3'),
+						text:"鱼我所欲也·孟子",
+						zuozhe:"颜莘桐",
+						其它内容:"生，亦我所欲也；义，亦我所欲也。二者不可得兼，\
+						舍生而取义者也。",
+						type:"audio",
+						idx: 4},
 			  ],
 			  backgroundImage: require("../../assets/梅花.jpg"),
 			  url: require("../../assets/孔子1.jpg"),
@@ -188,7 +222,10 @@
 		/* background-image: url(../../assets/高山流水.jpg); */
 		/* background-image: url(../../assets/仙鹤.jpg); */
 		/* background-image: url(../../assets/长城2.jpg); */
-		background-image: url(../../assets/GuiLin.jpg);
+		/* background-image: url(../../assets/GuiLin.jpg); */
+		/* background-image: url(../../assets/shan2.webp.jpg); */
+		background-image: url(../../assets/云淡风轻.png);
+		/*云淡风轻.png*/
 		position:fixed;
 		z-index: -1;
 	}
@@ -216,7 +253,7 @@
 	}
 	
 	.el-carousel__item{
-		background-color:rgba(1.0,0.0,1.0,0.0);
+		background-color:rgba(255,255,255,0.3);
 		/* background-image: url(../../assets/长城.jpg); */
 		/* background-image: url(../../assets/梅花.jpg); */
 	}
