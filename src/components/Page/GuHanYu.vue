@@ -3,25 +3,36 @@
 <template>
 	<div style="text-align: center;text-shadow: 5px 5px 5px #000000; ">
 		
-	<div class="main_body">
+		<div style="position:absolute;z-index:100;" >
+			<img src="../../assets/仙鹤.gif">
+			<!-- <img src="./assets/等待.gif"></img> -->
+		</div>
+		
+		
+	<div class="main_body" :style="{'margin-top':backgroundMarginTop}">
 	</div>	
 
 	 
 	<!-- #3 转页面 -->
-	<div style="height:180px"></div>
+	<div :style="{'height':backgroundMarginTop}"></div>
 
 	<el-main class="thirdBlock">
 		<!-- <img src="../../assets/等待.gif"></img> -->
 		<el-row>
 			<!-- <h1 style='font-size:200px;color:#ffffff;font-family:"汉仪行楷";'>信而好古，述而有作</h1> -->
-			<img height=200 src="../../assets/Logo5.png"></img>
+			<img 
+			:height="logoSize"
+			src="../../assets/Logo5.png"></img>
 		</el-row>
 		<!-- <el-image src=></el-image> -->
 		<el-row :gutter="18">
 		  <el-col :span="18" :offset="3">
-			  <p v-html="this.开头" style='font-size:60px; margin-top:0px;color:#ffffff;
+			  <p v-html="this.开头" style=' 
+			  margin-top:0px;color:#ffffff;
 			  text-align:left; font-weight:bold;
-			  font-family:"宋体"'>
+			  font-family:"宋体"'
+			  :style="{'font-size':textSize}"
+			  >
 			  <!--空格-->
 			  	<!-- {{this.开头}} -->
 			  </p>
@@ -86,6 +97,17 @@
 	// import el-image
 	
 	export default {
+		computed:{
+			logoSize:function(){
+				return 120*window.innerHeight/540 + "px"
+			},
+			textSize:function(){
+				return 30*window.innerHeight/540 + "px"
+			},
+			backgroundMarginTop:function(){
+				return -100*window.innerHeight/540 + "px"
+			}
+		},
 		methods:{
 			buttonRoute(e){
 				// console.log(e,f)

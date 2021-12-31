@@ -3,7 +3,15 @@
 <template>
 	<div style="text-align: center;" ref="routerViewBody">
 		
-	<div class="main_body">
+		
+		
+		<div style="position:absolute;z-index:100;margin-top:-100px;" >
+			<img src="../../assets/鱼.gif">
+			<!-- <img src="./assets/等待.gif"></img> -->
+		</div>
+		
+		
+	<div class="main_body" :style="{'margin-top':backgroundMarginTop}">
 	</div>	
 
 	
@@ -55,64 +63,39 @@
 	 
 	 
 	<!-- #3 转页面 -->
-	<div style="height:150px" class="top"></div>
+	<div :style="{'height':backgroundMarginTop}"></div>
+	<div style="height:30px" class="top"></div>
 
 
-	<el-button round type="primary" @click="prevSlide">上一篇</el-button>
-	<el-button round type="warning" @click="nextSlide">下一篇</el-button>	  
-		 
-	<!-- #1 图片 -->
-	<!-- <div style="height:300px"></div> -->
-<!-- 	<el-carousel arrow="always" 
-		indicator-position="none"
-		:height="carouselHeight" :autoplay="false"
-		ref="carousel">
-		
-	  <el-carousel-item 
-		v-for="item in carousel" :key="item.idx">
-
-		<el-main class="thirdBlock">
-			<el-row>
-				<h1 style="font-size:50px;">{{item.title}}</h1>
-			</el-row>
-			<el-row>
-				<h1 style="margin-top:-30px;" > {{item.zuozhe}}</h1>
-			</el-row>
-			<el-row :gutter="20">
-			  <el-col :span="22" :offset="1">
-				  <p 
-				  v-html="item.text" style="text-align:left;
-					font-size:30px;
-				  "></p>
-				  
-			  </el-col>
-			</el-row>
-			
-			
-		</el-main>
-		
-		
-		
-
-
-	  </el-carousel-item>
-	</el-carousel> -->
-	
+	<el-button 
+		:style='{
+		"font-size":fontZuoZheSize,
+		"height":buttonHeight,
+		"width":buttonWidth}'
+		round type="primary" @click="prevSlide">上一篇</el-button>
+	<el-button
+	 :style='{
+	 "font-size":fontZuoZheSize,
+	 "height":buttonHeight,
+	 "width":buttonWidth}'
+	 round type="warning" @click="nextSlide">下一篇</el-button>	  
 	
 	<div class="thirdBlock">
 		<el-row>
-			<h1 style="font-size:50px;">{{carousel[activeIndex].title}}</h1>
+			<h1 style="font-size:50px;"
+			:style="{'font-size':fontTitleSize}">{{carousel[activeIndex].title}}</h1>
 		</el-row>
 		<el-row>
-			<h1 style="margin-top:-30px;" > {{carousel[activeIndex].zuozhe}}</h1>
+			<h1 style="margin-top:-30px;"
+			 :style="{'font-size':fontTextSize}"> {{carousel[activeIndex].zuozhe}}</h1>
 		</el-row>
 		<el-row :gutter="20">
 		  <el-col :span="22" :offset="1">
 
 			  <p 
 			  v-html="carousel[activeIndex].text" style="text-align:left;
-				font-size:30px;
-			  "></p>
+			  "
+			  :style="{'font-size':fontTextSize}"></p>
 			  
 			  
 		  </el-col>
@@ -122,33 +105,19 @@
 	</div>
 	
 	
-	
 		<div style="height:00px"></div>
 		
-	<el-button round type="primary" @click="prevSlide">上一篇</el-button>
-	<el-button round type="warning" @click="nextSlide">下一篇</el-button>	  
-	
-
-
-<!-- 	<el-main>
-		<el-row>
-			<video height=380; :src='require("../../assets/作品/惠子相梁何思炘.mp4")' controls="controls"></video>
-		</el-row>
-		<el-row>
-			<video height=380; :src='require("../../assets/作品/道德经何思然.mp4")' controls="controls"></video>
-		</el-row>
-		<el-row>
-			<audio controls :src="require('../../assets/作品/劝学严旭.mp3')"></audio>
-		</el-row>
-		<el-row>
-			<audio controls :src="require('../../assets/作品/劝学张睿焘.mp3')"></audio>
-		</el-row>
-		<el-row>
-			<audio controls :src="require('../../assets/作品/鱼我所欲也颜莘桐.mp3')"></audio>
-		</el-row>
-	</el-main>
-	 -->
-	
+	<el-button 		:style='{
+		"font-size":fontZuoZheSize,
+		"height":buttonHeight,
+		"width":buttonWidth}'
+	round type="primary" @click="prevSlide">上一篇</el-button>
+	<el-button 		:style='{
+		
+		"font-size":fontZuoZheSize,
+		"height":buttonHeight,
+		"width":buttonWidth}'
+	round type="warning" @click="nextSlide">下一篇</el-button>	  
 	
 
 	</div>
@@ -199,6 +168,15 @@
 			}
 		},
 		computed:{
+			fontTitleSize:function(){
+				return 30*window.innerHeight/540 + "px"
+			},
+			fontTextSize:function(){
+				return 20*window.innerHeight/540 + "px"
+			},
+			backgroundMarginTop:function(){
+				return -100*window.innerHeight/540 + "px"
+			},
 			// carouselHeight:function(){
 			// 	console.log(this.$refs.carousel)
 			// 	return "1300px";
@@ -208,7 +186,16 @@
 			},
 			item:function(){
 				return carousel[activeIndex];
-			}
+			},
+			fontZuoZheSize:function(){
+				return 20*window.innerHeight/540 + "px"
+			},
+			buttonHeight:function(){
+				return 50*window.innerHeight/540 + "px"
+			},
+			buttonWidth:function(){
+				return 100*window.innerHeight/540 + "px"
+			},
 		},
 		data(){
 				  

@@ -3,58 +3,13 @@
 <template>
 	<div style="text-align: center;">
 		
-	<div class="main_body">
+	<div class="main_body" :style="{'margin-top':backgroundMarginTop}">
 	</div>	
 
-	
-	<!-- #2 介绍 -->
-<!-- 	<div style="height:40px"></div> -->
-	<!-- <img src="../../assets/孔子1.jpg"></img> -->
-<!-- 	<el-container >
-	  <el-aside width="650px" >
-		  <h1>论语·学而篇</h1>
-		  子曰：“学而时习之，不亦说乎？有朋自远方来，不亦乐乎？人不知而不愠，不亦君子乎？”
-		  
-		  　　有子曰：“其为人也孝弟，而好犯上者，鲜矣；不好犯上而好作乱者，未之有也。君子务本，本立而道生。孝弟也者，其为仁之本与！”
-		  
-		  　　子曰：“巧言令色，鲜矣仁！”
-		  
-		  　　曾子曰：“吾日三省吾身：为人谋而不忠乎？与朋友交而不信乎？传不习乎？”
-		  
-		  　　子曰：“道千乘之国，敬事而信，节用而爱人，使民以时。”
-		  
-		  　　子曰：“弟子入则孝，出则弟，谨而信，泛爱众，而亲仁，行有余力，则以学文。”
-		  
-		  　　子夏曰：“贤贤易色；事父母，能竭其力；事君，能致其身；与朋友交，言而有信。虽曰未学，吾必谓之学矣。”
-		  
-		  　　子曰：“君子不重则不威，学则不固。主忠信，无友不如己者，过，则勿惮改。”
-		  
-		  　　曾子曰：“慎终追远，民德归厚矣。”
-		  
-		  　　子禽问于子贡曰：“夫子至于是邦也，必闻其政，求之与，抑与之与？”子贡曰：“夫子温、良、恭、俭、让以得之。夫子之求之也，其诸异乎人之求之与？”
-		  
-		  　　子曰：“父在，观其志；父没，观其行；三年无改于父之道，可谓孝矣。”
-		  
-		  　　有子曰：“礼之用，和为贵。先王之道，斯为美。小大由之，有所不行。知和而和，不以礼节之，亦不可行也。”
-		  
-		  　　有子曰：“信近于义，言可复也。恭近于礼，远耻辱也。因不失其亲，亦可宗也。”
-		  
-		  　　子曰：“君子食无求饱，居无求安，敏于事而慎于言，就有道而正焉，可谓好学也已。”
-		  
-		  　　子贡曰：“贫而无谄，富而无骄，何如？”子曰：“可也。未若贫而乐，富而好礼者也。”子贡曰：“《诗》云：‘如切如磋，如琢如磨’，其斯之谓与？”子曰：“赐也，始可与言《诗》已矣，告诸往而知来者。”
-		  
-		  　　子曰：“不患人之不己知，患不知人也。”
-		  
-	  </el-aside>
-	  <el-main style="text-align: center;">
-		  <img src="../../assets/孔子1.jpg" height=300></img>
-			
-	  </el-main>
-	</el-container>
-	 -->
+
 	 
 	<!-- #3 转页面 -->
-	<div style="height:100px"></div>
+	<div :style="{'height':backgroundMarginTop}"></div>
 
 	<el-main class="thirdBlock">
 		<!-- <img src="../../assets/等待.gif"></img> -->
@@ -87,16 +42,21 @@
 		:height="pageHeight" :autoplay="false"
 		ref="carousel">
 		
-		<el-button style="position:relative;
-				top:250px;opacity:1.0;height:50px;width:100px;
-				font-size:20px;z-index:100;" 
-				:style='{right:videoWidth, top:pageHeightHalf}'
+		<el-button 
+				style="position:relative;
+				top:250px;opacity:1.0;z-index:100;" 
+				:style='{right:videoWidth, top:pageHeightHalf,
+					"font-size":fontZuoZheSize,
+					"height":buttonHeight,
+					"width":buttonWidth}'
 			round type="primary" @click="prevSlide">上一篇</el-button>
 		<el-button style="position:relative;
-					;opacity:1.0;height:50px;width:100px;
-					font-size:20px;z-index:100;" 
+					;opacity:1.0;z-index:100;" 
 					
-					:style='{left:videoWidth, top:pageHeightHalf}'
+					:style='{left:videoWidth, top:pageHeightHalf,
+					"font-size":fontZuoZheSize,
+					"height":buttonHeight,
+					"width":buttonWidth}'
 				round type="warning" @click="nextSlide">下一篇</el-button>  
 			  
 
@@ -105,18 +65,26 @@
 		
 		<div >
 			
+			
+			<!-- <div v-if="item.type == 'audio' "
+				:style='{height:pageHeightThird}'>
+				</div> -->
+			
 			<el-main class="thirdBlock">
 				<el-row>
-					<div style="font-size:55px;font-family:'汉仪行楷';">{{item.text}}</div>
+					<div :style="{'font-size':fontTitleSize}"
+					 style="font-family:'汉仪行楷';">{{item.text}}</div>
 				</el-row>
-				<el-row>
+				<!-- <el-row>
 					<div style="font-size:15px;">{{item.text2}}</div>
-				</el-row>
+				</el-row> -->
 				<el-row :gutter="10">
 				  <el-col :span="8" :offset="8">
-					<p style="font-size:20px;margin-top:10px;">朗诵者：{{item.zuozhe}}</p>
-					<p v-html="item.其它内容"
-						style="text-align:left;font-size:25px;margin-top:40px;font-family:'';"></p>
+					<p :style="{'font-size':fontZuoZheSize}"
+					 style="margin-top:10px;">朗诵者：{{item.zuozhe}}</p>
+					<p v-html="item.其它内容"	
+						:style="{'font-size':fontNeiRongSize}"
+						style="text-align:left;margin-top:40px;font-family:'';"></p>
 				  </el-col>
 				</el-row>
 			</el-main>
@@ -127,7 +95,9 @@
 			</div>
 			<div v-if="item.type == 'audio'">
 					<!-- <div style="height:150px"></div> -->
-				<audio style="transform:scale(1.3,1.3);" controls :src="item.url"></audio>
+				<audio 
+					style="transform:scale(1.3,1.3);" 
+				controls :src="item.url"></audio>
 			</div>		
 			<!-- <p style="position:absolute; left:600px;top:80px;
 				color:#ffff7f;
@@ -188,6 +158,24 @@
 			}
 		},
 		computed:{
+			backgroundMarginTop:function(){
+				return -100*window.innerHeight/540 + "px"
+			},
+			buttonHeight:function(){
+				return 50*window.innerHeight/540 + "px"
+			},
+			buttonWidth:function(){
+				return 100*window.innerHeight/540 + "px"
+			},
+			fontTitleSize:function(){
+				return 55*window.innerHeight/540 + "px"
+			},
+			fontZuoZheSize:function(){
+				return 20*window.innerHeight/540 + "px"
+			},
+			fontNeiRongSize:function(){
+				return 25*window.innerHeight/540 + "px"
+			},
 			pageHeight:function(){
 				
 				return window.innerHeight-20 + "px";
@@ -196,11 +184,15 @@
 				
 				return window.innerHeight/2 + "px";
 			},
+			pageHeightThird: function(){
+				
+				return window.innerHeight/3 + "px";
+			},
 			videoSetWidth:function(){
-				return 0.4*window.innerWidth-20 + "px";
+				return 0.45*window.innerWidth-20 + "px";
 			},
 			videoWidth:function(){
-				return 0.3*window.innerWidth + "px";
+				return 0.25*window.innerWidth + "px";
 			},
 		},
 		mounted(){
@@ -284,6 +276,7 @@
 	}
 	
 	.el-button{
+		/* transform:scale(0.8,0.8); */
 		/* height:200px; */
 	}
 	
@@ -306,7 +299,7 @@
 	}
 	
 	.el-carousel__item{
-		background-color:rgba(255,255,255,0.3);
+		/* background-color:rgba(255,255,255,0.3); */
 		/* background-image: url(../../assets/长城.jpg); */
 		/* background-image: url(../../assets/梅花.jpg); */
 	}

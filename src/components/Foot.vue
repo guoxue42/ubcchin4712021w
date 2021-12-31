@@ -1,5 +1,5 @@
 <template>
-	<div class="fourthBlock" >
+	<div class="fourthBlock" :style="{'font-size':fontTextSize}" >
 	<!-- #4 感谢页面 -->
 	<!-- <div style="height:40px"></div> -->
 <!-- 	<el-container>
@@ -22,7 +22,7 @@
 			<!-- todos (transparent ) -->
 			<img href="https://asia.ubc.ca/"
 				src="../assets/ubc_无背景.png" 
-				height="200" ></img>
+				:style="{height:imageHeight}"></img>
 				<br>
 				<h1 >© UBC CHIN491 2021W. </h1>
 		</el-col>
@@ -49,6 +49,12 @@ export default {
 		return{}
 	},
 	computed:{
+		imageHeight:function(){
+			return 100*window.innerHeight/540 + "px"
+		},
+			fontTextSize:function(){
+				return 15*window.innerHeight/540 + "px"
+			},
 		routePath:function(){
 		  return this.$route.path
 		},
@@ -93,7 +99,6 @@ export default {
 		margin-bottom:-100px;
 		bottom:-10px;
 		/* background-color:#99A9BF; */
-		font-size:20px;
 		
 		text-align:center;
 		/* text-shadow: 5px 5px 5px #000000; */
