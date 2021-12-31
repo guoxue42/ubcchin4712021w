@@ -164,7 +164,7 @@
 				var len1 = (this.carousel[0].text).length
 				var len2 = (this.carousel[activeIndex].text).length
 				console.log(len2/len1)
-				this.carouselHeight = 2000.0*(len2)/len1+"px"
+				this.carouselHeight = (600.0+1400.0*(len2)/len1)+"px"
 			}
 		},
 		computed:{

@@ -8,7 +8,7 @@
 
 	
 	<!-- #2 介绍 -->
-	<div style="height:150px"></div>
+	<div style="height:8rem"></div>
 	<!-- <img src="../../assets/孔子1.jpg"></img> -->
 <!-- 	<el-container >
 	  <el-aside width="650px" >
@@ -65,7 +65,7 @@
 		<!-- <el-image src=></el-image> -->
 		<el-row :gutter="20">
 		  <el-col :span="22" :offset="1">
-			  <p v-html="this.开头" style='font-size:30px; margin-top:0px;color:#ffffff;
+			  <p v-html="this.开头" style='font-size:2rem; margin-top:0px;color:#ffffff;
 			  text-align:left; font-weight:bold;
 			  font-family:"宋体"'>
 			  <!--空格-->
@@ -89,7 +89,7 @@
 
 	
 	
-	<div style="height:10px"></div>
+	<div style="height:1rem"></div>
 	<!-- #1 图片 -->
 	<!-- <div style="height:300px"></div> -->
 <!-- 	<el-carousel indicator-position="outside" height="400px">
@@ -198,9 +198,9 @@
 	}
 	
 	.el-button{
-		height:140px;
-		width:300px;
-		font-size: 50px;
+		height:140rem;
+		width:300rem;
+		font-size: 50rem;
 		font-family:"新宋体";
 	}
 	
@@ -210,15 +210,15 @@
 	
 	.el-carousel__arrow 
 	.el-carousel__arrow--left{
-		width:500px;
-		height:500px;
+		width:500rem;
+		height:500rem;
 	}
 	
 	.el-carousel__item h3 {
 	  color: #475669;
-	  font-size: 18px;
+	  font-size: 18rem;
 	  opacity: 0.75;
-	  line-height: 300px;
+	  line-height: 300rem;
 	  margin: 0;
 	}
 	
@@ -242,7 +242,7 @@
 		color:#000000!important;
 	}
 	.thirdBlock{
-		/* height:520px; */
+		/* height:520rem; */
 		/* width:50%; */
 		/* text-align: right; */
 		/* background-size:500px 350px; */
