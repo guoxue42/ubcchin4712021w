@@ -59,9 +59,9 @@
 	  </el-header>
 	  
 	  <div style="margin-left:-8px;height:100%;margin-top:-100px;" ref="routerViewBody">
-	      	 
-	 <router-view class="child-view"></router-view>
-	 
+	      	     <transition name="transitionRouter" mode="out-in">
+	      	       <router-view/>
+	      	     </transition>
 	 
 	 <div style="height:10px"></div>
 	 <Foot></Foot>
@@ -75,6 +75,11 @@
 	  
 	</el-container>
 	
+	
+	
+	<div >
+		
+	</div>
 </div>
 
 	
@@ -126,12 +131,22 @@ export default {
 		},
 		   clickedEvent(){
 			   console.log("按了")
+			   
+			   
+			   
 		   }
 		}
 }
 </script>
 
 <style >
+	
+	.transitionRouter-enter-active, .transitionRouter-leave-active {
+	    transition: all 1s;
+	} .transitionRouter-enter, .transitionRouter-leave{
+	    transform: translate3d(100%, 0, 0);
+	}
+	
 	#app {
 		/* font-family: Helvetica, sans-serif; */
 		text-align: center;
