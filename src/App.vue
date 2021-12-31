@@ -2,16 +2,20 @@
 	
 	
 <div>
-<!-- 	<div v-show="true" style="position:fixed;width:100%;height:300px;
-	background-color:#0000FF; z-index:99999"></div> -->
+	<div v-show="true" style="position:absolute;width:100%;
+	background-color: rgb(238, 241, 246); z-index:0;
+	margin-left:-10px; margin-top:-10px;"
+	
+	:style="{height:headerHeight}"
+	></div>
 	
 	
 	
-	<el-container :style="{height:pageHeight}" style="margin-left=-20px;">
+	<el-container :style="{height:pageHeight}" >
 	
 	  
 	  <el-header  class="el-menu-demo"
-	  style="background-color: rgb(238, 241, 246); 
+	  style="padding-top:10px; background-color: rgb(238, 241, 246); 
 	  text-align:center;
 		margin-top:-10px;z-index:1000;"
 			
@@ -95,7 +99,7 @@
 
 	  </el-header>
 	  
-	  <div style="margin-left:-ipx;height:100%;" ref="routerViewBody">
+	  <div style="margin-left:-8px;height:100%;" ref="routerViewBody">
 	      	     <transition name="transitionRouter" mode="out-in">
 	      	       <router-view/>
 	      	     </transition>
