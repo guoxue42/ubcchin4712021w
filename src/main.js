@@ -47,6 +47,7 @@ const routes = [
   { path: '/guHanYu', component: GuHanYu },
   { path: '/langSong', component: LangSong },
   { path: '/xinJie', component: XinJie },
+  
 ]
 
 const router = new VueRouter({ routes });

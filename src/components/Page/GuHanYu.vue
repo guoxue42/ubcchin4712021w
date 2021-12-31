@@ -1,71 +1,25 @@
 <!-- 这个页面是主页面 -->
 
 <template>
-	<div>
+	<div style="text-align: center;text-shadow: 5px 5px 5px #000000; ">
 		
 	<div class="main_body">
 	</div>	
 
-	
-	<!-- #2 介绍 -->
-	<div style="height:8rem"></div>
-	<!-- <img src="../../assets/孔子1.jpg"></img> -->
-<!-- 	<el-container >
-	  <el-aside width="650px" >
-		  <h1>论语·学而篇</h1>
-		  子曰：“学而时习之，不亦说乎？有朋自远方来，不亦乐乎？人不知而不愠，不亦君子乎？”
-		  
-		  　　有子曰：“其为人也孝弟，而好犯上者，鲜矣；不好犯上而好作乱者，未之有也。君子务本，本立而道生。孝弟也者，其为仁之本与！”
-		  
-		  　　子曰：“巧言令色，鲜矣仁！”
-		  
-		  　　曾子曰：“吾日三省吾身：为人谋而不忠乎？与朋友交而不信乎？传不习乎？”
-		  
-		  　　子曰：“道千乘之国，敬事而信，节用而爱人，使民以时。”
-		  
-		  　　子曰：“弟子入则孝，出则弟，谨而信，泛爱众，而亲仁，行有余力，则以学文。”
-		  
-		  　　子夏曰：“贤贤易色；事父母，能竭其力；事君，能致其身；与朋友交，言而有信。虽曰未学，吾必谓之学矣。”
-		  
-		  　　子曰：“君子不重则不威，学则不固。主忠信，无友不如己者，过，则勿惮改。”
-		  
-		  　　曾子曰：“慎终追远，民德归厚矣。”
-		  
-		  　　子禽问于子贡曰：“夫子至于是邦也，必闻其政，求之与，抑与之与？”子贡曰：“夫子温、良、恭、俭、让以得之。夫子之求之也，其诸异乎人之求之与？”
-		  
-		  　　子曰：“父在，观其志；父没，观其行；三年无改于父之道，可谓孝矣。”
-		  
-		  　　有子曰：“礼之用，和为贵。先王之道，斯为美。小大由之，有所不行。知和而和，不以礼节之，亦不可行也。”
-		  
-		  　　有子曰：“信近于义，言可复也。恭近于礼，远耻辱也。因不失其亲，亦可宗也。”
-		  
-		  　　子曰：“君子食无求饱，居无求安，敏于事而慎于言，就有道而正焉，可谓好学也已。”
-		  
-		  　　子贡曰：“贫而无谄，富而无骄，何如？”子曰：“可也。未若贫而乐，富而好礼者也。”子贡曰：“《诗》云：‘如切如磋，如琢如磨’，其斯之谓与？”子曰：“赐也，始可与言《诗》已矣，告诸往而知来者。”
-		  
-		  　　子曰：“不患人之不己知，患不知人也。”
-		  
-	  </el-aside>
-	  <el-main style="text-align: center;">
-		  <img src="../../assets/孔子1.jpg" height=300></img>
-			
-	  </el-main>
-	</el-container>
-	 -->
 	 
 	<!-- #3 转页面 -->
-	<div style="height:0px"></div>
+	<div style="height:180px"></div>
 
 	<el-main class="thirdBlock">
 		<!-- <img src="../../assets/等待.gif"></img> -->
 		<el-row>
 			<!-- <h1 style='font-size:200px;color:#ffffff;font-family:"汉仪行楷";'>信而好古，述而有作</h1> -->
-			<img height=150 src="../../assets/Logo5.png"></img>
+			<img height=200 src="../../assets/Logo5.png"></img>
 		</el-row>
 		<!-- <el-image src=></el-image> -->
-		<el-row :gutter="20">
-		  <el-col :span="22" :offset="1">
-			  <p v-html="this.开头" style='font-size:2rem; margin-top:0px;color:#ffffff;
+		<el-row :gutter="18">
+		  <el-col :span="18" :offset="3">
+			  <p v-html="this.开头" style='font-size:60px; margin-top:0px;color:#ffffff;
 			  text-align:left; font-weight:bold;
 			  font-family:"宋体"'>
 			  <!--空格-->
@@ -87,9 +41,8 @@
 		</el-row>
 	</el-main>
 
+		<div style="height:150px"></div>
 	
-	
-	<div style="height:1rem"></div>
 	<!-- #1 图片 -->
 	<!-- <div style="height:300px"></div> -->
 <!-- 	<el-carousel indicator-position="outside" height="400px">

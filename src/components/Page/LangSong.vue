@@ -1,7 +1,7 @@
 <!-- 这个页面是主页面 -->
 
 <template>
-	<div>
+	<div style="text-align: center;">
 		
 	<div class="main_body">
 	</div>	
@@ -84,16 +84,19 @@
 	
 
 	<el-carousel arrow="never" indicator-position="none" 
-		height="420px" :autoplay="false"
+		:height="pageHeight" :autoplay="false"
 		ref="carousel">
 		
 		<el-button style="position:relative;
-				top:250px;right:300px;opacity:1.0;height:50px;width:100px;
+				top:250px;opacity:1.0;height:50px;width:100px;
 				font-size:20px;z-index:100;" 
+				:style='{right:videoWidth}'
 			round type="primary" @click="prevSlide">上一篇</el-button>
 		<el-button style="position:relative;
-					top:250px;left:300px;opacity:1.0;height:50px;width:100px;
+					top:250px;;opacity:1.0;height:50px;width:100px;
 					font-size:20px;z-index:100;" 
+					
+					:style='{left:videoWidth}'
 				round type="warning" @click="nextSlide">下一篇</el-button>  
 			  
 
@@ -120,7 +123,7 @@
 			
 			<div v-if="item.type == 'video'">
 						<!-- <div style="height:50px"></div> -->
-				<video height=300 style="margin-top:-50px;" :src="item.url" controls="controls"></video>
+				<video :height="videoHeight" style="margin-top:-50px;" :src="item.url" controls="controls"></video>
 			</div>
 			<div v-if="item.type == 'audio'">
 					<!-- <div style="height:150px"></div> -->
@@ -177,12 +180,24 @@
 			nextSlide(){
 				this.$refs.carousel.next()
 				// console.log(this.$refs.carousel.next())
-				document.documentElement.scrollTop = 0;
+				// document.documentElement.scrollTop = 0;
 			},
 			prevSlide(){
 				this.$refs.carousel.prev()
-				document.documentElement.scrollTop = 0;
+				// document.documentElement.scrollTop = 0;
 			}
+		},
+		computed:{
+			pageHeight:function(){
+				
+				return window.innerHeight-20 + "px";
+			},
+			videoHeight:function(){
+				return 0.8*window.innerHeight-20 + "px";
+			},
+			videoWidth:function(){
+				return 0.3*window.innerWidth + "px";
+			},
 		},
 		data(){
 		  return {

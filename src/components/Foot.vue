@@ -13,9 +13,10 @@
 	
 	<!-- #5 感谢页面 -->
 	<div>
-	<el-container :class="{textColorYang: textColorYang, 
+	<el-row :class="{textColorYang: textColorYang, 
 		textColorYin: textColorYin}">
-		<el-main style="text-align:center;">
+		<el-col :span="8"
+			style="text-align:center;">
 
 			<!-- <div style="height:10px;"></div> -->
 			<!-- todos (transparent ) -->
@@ -24,18 +25,19 @@
 				height="200" ></img>
 				<br>
 				<h1 >© UBC CHIN491 2021W. </h1>
-		</el-main>
-		<el-main style="text-align:center;" class="thirdBlock" >
+		</el-col>
+		<el-col :span="8"
+			style="text-align:center;" class="thirdBlock" >
 			
 			<h1 >​致谢</h1>
 			<h3>感谢指导老师刘学顺以及CHIN491全体学生的积极参与</h3>​
-		</el-main>
-		<el-main>
+		</el-col>
+		<el-col :span="8">
 			<h1>制作</h1>
 			<h3>指导老师：刘学顺</h3>
 			<h3>制作团队：莫浙安</h3>
-		</el-main>
-	</el-container>
+		</el-col>
+	</el-row>
 	</div>
 	
 	</div>
@@ -92,5 +94,8 @@ export default {
 		bottom:-10px;
 		/* background-color:#99A9BF; */
 		font-size:20px;
+		
+		text-align:center;
+		/* text-shadow: 5px 5px 5px #000000; */
 	}
 </style>

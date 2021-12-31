@@ -1,7 +1,7 @@
 <!-- 这个页面是主页面 -->
 
 <template>
-	<div>
+	<div style="text-align: center;" ref="routerViewBody">
 		
 	<div class="main_body">
 	</div>	
@@ -53,13 +53,14 @@
 	</el-container>
 	 -->
 	 
+	 
 	<!-- #3 转页面 -->
 	<div style="height:150px" class="top"></div>
 
 
 	<el-button round type="primary" @click="prevSlide">上一篇</el-button>
 	<el-button round type="warning" @click="nextSlide">下一篇</el-button>	  
-		  
+		 
 	<!-- #1 图片 -->
 	<!-- <div style="height:300px"></div> -->
 	<el-carousel arrow="always" 
@@ -76,7 +77,7 @@
 				<h1 style="font-size:50px;">{{item.title}}</h1>
 			</el-row>
 			<el-row>
-				<h1 > {{item.zuozhe}}</h1>
+				<h1 style="margin-top:-30px;" > {{item.zuozhe}}</h1>
 			</el-row>
 			<el-row :gutter="20">
 			  <el-col :span="22" :offset="1">
@@ -85,7 +86,8 @@
 				  font-family:"宋体"' v-for="txt in item.text">
 					 &nbsp;&nbsp;{{txt}}
 				  </p> -->
-				  <p v-html="item.text" style="text-align:left;
+				  <p 
+				  v-html="item.text" style="text-align:left;
 					font-size:30px;
 				  "></p>
 				  <!-- <p v-html="item.text2" style="text-align:left;
@@ -104,6 +106,8 @@
 	  </el-carousel-item>
 	</el-carousel>
 	
+		<div style="height:00px"></div>
+		
 	<el-button round type="primary" @click="prevSlide">上一篇</el-button>
 	<el-button round type="warning" @click="nextSlide">下一篇</el-button>	  
 	
@@ -158,13 +162,17 @@
 			callback(){
 				// console.log(this.$refs.carousel.activeIndex)
 				var activeIndex = this.$refs.carousel.activeIndex
-				console.log(activeIndex)
-				console.log(this.carousel[0].text)
-				console.log(this.carousel[activeIndex].text)
+				// console.log(activeIndex)
+				// console.log(this.carousel[0].text)
+				// console.log(this.carousel[activeIndex].text)
 				var len1 = (this.carousel[0].text).length
 				var len2 = (this.carousel[activeIndex].text).length
-				console.log(len2/len1)
-				this.carouselHeight = (600.0+1400.0*(len2)/len1)+"px"
+				// console.log(len2/len1)
+				this.carouselHeight = (380.0+1600.0*(len2)/len1)+"px"
+				
+				
+				console.log(this.$refs.routerViewBody)
+				this.$refs.routerViewBody.scrollTop = 0;
 			}
 		},
 		computed:{
@@ -174,7 +182,9 @@
 			// }
 		},
 		data(){
+				  
 		  return {
+			  
 			  index: 0 ,
 			  // todos
 			  carouselHeight:"2000px",
@@ -194,7 +204,7 @@
 				   zuozhe:"王欻至",
 				   title:"读《庄周梦蝶》有感",
 					text:'\
-<p> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;“昔者庄周梦为胡蝶，栩栩然胡蝶也，自喻适志与！不知周也。俄然觉，则蘧蘧然周也。不知周之梦为胡蝶与，胡蝶之梦为周与？周与胡蝶，则必有分矣。此之谓物化。”1 \
+<p> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;“昔者庄周梦为胡蝶，栩栩然胡蝶也，自喻适志与！不知周也。俄然觉，则蘧蘧然周也。不知周之梦为胡蝶与，胡蝶之梦为周与？周与胡蝶，则必有分矣。此之谓物化。”\
 </p><p> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;《庄周梦蝶》是一则著名的寓言，从开始学习古文时，我就对这篇古文中的思想十分感兴趣。结合这学期对道家思想的学习，我想把目前我对于这篇寓言的想法、思考记录下来。 \
 </p><p> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;“周与胡蝶，则必有分矣。”庄子和蝴蝶是两种不同的事物，两者有着不同的存在形态，有着本质上的区别。联系前文中提到的梦与觉两种状态，在庄周梦到自己变成蝴蝶的梦境中，庄周自认为是蝴蝶，从梦中醒来时，又意识到自己其实是庄周。庄子和蝴蝶之间虽然存在着形态上的区别，但由于“此之谓物化”的概念，二者之间是可以相互转化的。陈鼓应先生认为“物化”意为“万物的转化”。2人和蝴蝶虽然存在形体上的不同，但同样都是存在于世间的物体，那么是可以跨越事物形体上的差异，形成统一、融合，这就是万物之间的转化，即“物化”。 \
 </p><p> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;这种事物之间的转化，在“梦”与“觉”的场景转化中得到了很好的体现。“不知周之梦为胡蝶与，胡蝶之梦为周与？”不知道是庄周做梦变成了蝴蝶，还是蝴蝶做梦变成了庄周。庄周、蝴蝶与梦、觉之间没有明确的对应关系。“物化”的概念和“梦”与“觉”之间的转化相辅相成，展现出庄子认为对梦和觉的界限不必过于纠结。世间万物不应该有明显的区分，我们应该保有超越划分界限的立场看待事物和问题。因为任何既定的界限都是可以超越的。如果将这一哲学理念融入到现实生活中，我们应该超越既定的、划分好的界限、立场，这对于自我认知以及如何看待其他事物有着很重要的意义。“天地与我并生，万物与我为一。”自我和世间万物是统一、共生的，但内在却有着一定的多样性和差异性。 \

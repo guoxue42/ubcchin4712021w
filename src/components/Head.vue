@@ -3,14 +3,12 @@
 	<div>
 	
 		<div  class="el-menu-demo">
+			
 		<el-menu :default-active="activeIndex"
 		   mode="horizontal" @select="handleSelect"
 			router
 			:background-color="backgroundColor"
 			class="el-menu-main"
-			style="align-items:center;  
-    align-items: center;
-    justify-content:center;"
 			>
 		  
 		  <el-menu-item index="0" class="taiji">
@@ -28,7 +26,7 @@
 		  <el-menu-item index="/"> 2021冬季中文491作品展示 </el-menu-item>
 		  
 		  <!-- <el-menu-item index="guHanYu">首页</el-menu-item> -->
-		  <el-menu-item index="langSong">古文朗诵</el-menu-item>
+		  <el-menu-item index="/langSong">古文朗诵</el-menu-item>
 		  <el-menu-item index="xinJie">古文新解</el-menu-item>
 		
 		<el-menu-item index="0" class="taiji">
@@ -42,6 +40,7 @@
 		</el-menu-item>
 		
 		</el-menu>
+		
 		
 		</div>
 		
@@ -98,14 +97,16 @@
 	}
 	
 	.el-menu-item{
+		
 		height:106px;
 		line-height: 106px;
 		/* color:red; */
-		font-size:35px;
+		font-size:55px;
 		margin-left:40px;
 		margin-top:10px;
 		font-family:"汉仪行楷";
-		/* left:-30px; */
+		left:200px;
+		
 	}
 	el-menu-item{
 		/* opacity: 0.2; */
@@ -115,7 +116,7 @@
 		/* left:100%; */
 		opacity: 0.8;
 		/* left:40%; */
-		/* text-align:center; */
+		text-align:center;
 	}
 	.el-menu-main{
 		width:1000%;
