@@ -41,7 +41,7 @@
 		</el-row>
 	</el-main>
 
-		<div style="height:150px"></div>
+		<div style="height:180px"></div>
 	
 	<!-- #1 图片 -->
 	<!-- <div style="height:300px"></div> -->
