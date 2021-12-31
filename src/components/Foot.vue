@@ -102,5 +102,6 @@ export default {
 		
 		text-align:center;
 		/* text-shadow: 5px 5px 5px #000000; */
+		text-shadow: 1px 1px 1px #000000;
 	}
 </style>

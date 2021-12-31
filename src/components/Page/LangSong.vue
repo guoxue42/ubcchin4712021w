@@ -5,8 +5,11 @@
 		
 	<div class="main_body" :style="{'margin-top':backgroundMarginTop}">
 	</div>	
-
-
+		
+	<!-- 	<div style="position:absolute;z-index:100;margin-top:-200px;
+			height=10px;" >
+			<img src="../../assets/叶.gif" >
+		</div> -->
 	 
 	<!-- #3 转页面 -->
 	<div :style="{'height':backgroundMarginTop}"></div>
@@ -81,10 +84,12 @@
 				<el-row :gutter="10">
 				  <el-col :span="8" :offset="8">
 					<p :style="{'font-size':fontZuoZheSize}"
-					 style="margin-top:10px;">朗诵者：{{item.zuozhe}}</p>
+					 style="margin-top:10px;text-shadow: 1px 1px 1px #FFFFFF;">
+						朗诵者：{{item.zuozhe}}</p>
 					<p v-html="item.其它内容"	
 						:style="{'font-size':fontNeiRongSize}"
-						style="text-align:left;margin-top:40px;font-family:'';"></p>
+						style="text-align:left;margin-top:40px;font-family:'';
+							text-shadow: 1px 1px 1px #FFFFFF; "></p>
 				  </el-col>
 				</el-row>
 			</el-main>
@@ -242,6 +247,12 @@
 						舍生而取义者也。",
 						type:"audio",
 						idx: 4},
+					{url: require('../../assets/作品/述而莫浙安.mp3'),
+						text:"论语·述而",//孟子
+						zuozhe:"莫浙安",
+						其它内容:"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;子曰：三人行必有我师焉。择其善者而从之，其不善者而改之。",
+						type:"audio",
+						idx: 5},
 			  ],
 			  backgroundImage: require("../../assets/梅花.jpg"),
 			  url: require("../../assets/孔子1.jpg"),
