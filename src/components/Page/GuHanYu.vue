@@ -54,18 +54,18 @@
 	 -->
 	 
 	<!-- #3 转页面 -->
-	<div style="height:50px"></div>
+	<div style="height:0px"></div>
 
 	<el-main class="thirdBlock">
 		<!-- <img src="../../assets/等待.gif"></img> -->
 		<el-row>
 			<!-- <h1 style='font-size:200px;color:#ffffff;font-family:"汉仪行楷";'>信而好古，述而有作</h1> -->
-			<img height=200 src="../../assets/Logo5.png"></img>
+			<img height=150 src="../../assets/Logo5.png"></img>
 		</el-row>
 		<!-- <el-image src=></el-image> -->
 		<el-row :gutter="20">
 		  <el-col :span="22" :offset="1">
-			  <p v-html="this.开头" style='font-size:60px; margin-top:50px;color:#ffffff;
+			  <p v-html="this.开头" style='font-size:30px; margin-top:0px;color:#ffffff;
 			  text-align:left; font-weight:bold;
 			  font-family:"宋体"'>
 			  <!--空格-->
@@ -89,7 +89,7 @@
 
 	
 	
-	<div style="height:200px"></div>
+	<div style="height:10px"></div>
 	<!-- #1 图片 -->
 	<!-- <div style="height:300px"></div> -->
 <!-- 	<el-carousel indicator-position="outside" height="400px">

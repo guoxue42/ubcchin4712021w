@@ -104,8 +104,7 @@
 		margin-left:40px;
 		margin-top:10px;
 		font-family:"汉仪行楷";
-		left:4.5%;
-		
+		left:-30px;
 	}
 	el-menu-item{
 		/* opacity: 0.2; */

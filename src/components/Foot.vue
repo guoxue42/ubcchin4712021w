@@ -91,6 +91,6 @@ export default {
 		margin-bottom:-100px;
 		bottom:-10px;
 		/* background-color:#99A9BF; */
-		font-size:28px;
+		font-size:20px;
 	}
 </style>

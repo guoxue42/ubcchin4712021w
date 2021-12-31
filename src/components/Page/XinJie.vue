@@ -145,27 +145,38 @@
 				this.$refs.carousel.next()
 				// console.log(this.$refs.carousel.next())
 				document.documentElement.scrollTop = 0;
-				console.log(this.$refs.carousel)
+				// console.log(this.$refs.carousel)
+				this.callback()
 			},
 			prevSlide(){
 				this.$refs.carousel.prev()
 				document.documentElement.scrollTop = 0;
-				console.log(this.$refs.carousel)
+				// console.log(this.$refs.carousel)
+				this.callback()
 			},
 			callback(){
-				
+				// console.log(this.$refs.carousel.activeIndex)
+				var activeIndex = this.$refs.carousel.activeIndex
+				console.log(activeIndex)
+				console.log(this.carousel[0].text)
+				console.log(this.carousel[activeIndex].text)
+				var len1 = (this.carousel[0].text).length
+				var len2 = (this.carousel[activeIndex].text).length
+				console.log(len2/len1)
+				this.carouselHeight = 2000.0*(len2)/len1+"px"
 			}
 		},
 		computed:{
-			carouselHeight:function(){
-				
-				return "1300px";
-			}
+			// carouselHeight:function(){
+			// 	console.log(this.$refs.carousel)
+			// 	return "1300px";
+			// }
 		},
 		data(){
 		  return {
 			  index: 0 ,
 			  // todos
+			  carouselHeight:"1300px",
 			  carousel: [
 				   {
 				   zuozhe:"严  旭",
