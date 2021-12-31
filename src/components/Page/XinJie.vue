@@ -88,8 +88,8 @@
 				  <p v-html="item.text" style="text-align:left;
 					font-size:30px;
 				  "></p>
-				  <p v-html="item.text2" style="text-align:left;
-					font-size:20px;"></p>
+				  <!-- <p v-html="item.text2" style="text-align:left;
+					font-size:20px;"></p> -->
 				  
 			  </el-col>
 			</el-row>
@@ -100,11 +100,12 @@
 	
 		<!-- </touch-ripple> -->
 		
-		<el-button round type="primary" @click="prevSlide">上一篇</el-button>
-		<el-button round type="warning" @click="nextSlide">下一篇</el-button>	  
-		
+
 	  </el-carousel-item>
 	</el-carousel>
+	
+	<el-button round type="primary" @click="prevSlide">上一篇</el-button>
+	<el-button round type="warning" @click="nextSlide">下一篇</el-button>	  
 	
 
 
@@ -176,7 +177,7 @@
 		  return {
 			  index: 0 ,
 			  // todos
-			  carouselHeight:"1300px",
+			  carouselHeight:"2000px",
 			  carousel: [
 				   {
 				   zuozhe:"严  旭",

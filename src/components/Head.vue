@@ -3,12 +3,14 @@
 	<div>
 	
 		<div  class="el-menu-demo">
-			
 		<el-menu :default-active="activeIndex"
 		   mode="horizontal" @select="handleSelect"
 			router
 			:background-color="backgroundColor"
 			class="el-menu-main"
+			style="align-items:center;  
+    align-items: center;
+    justify-content:center;"
 			>
 		  
 		  <el-menu-item index="0" class="taiji">
@@ -40,7 +42,6 @@
 		</el-menu-item>
 		
 		</el-menu>
-		
 		
 		</div>
 		
@@ -104,7 +105,7 @@
 		margin-left:40px;
 		margin-top:10px;
 		font-family:"汉仪行楷";
-		left:-30px;
+		/* left:-30px; */
 	}
 	el-menu-item{
 		/* opacity: 0.2; */
@@ -114,7 +115,7 @@
 		/* left:100%; */
 		opacity: 0.8;
 		/* left:40%; */
-		text-align:center;
+		/* text-align:center; */
 	}
 	.el-menu-main{
 		width:1000%;

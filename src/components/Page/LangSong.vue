@@ -54,7 +54,7 @@
 	 -->
 	 
 	<!-- #3 转页面 -->
-	<div style="height:150px"></div>
+	<div style="height:100px"></div>
 
 	<el-main class="thirdBlock">
 		<!-- <img src="../../assets/等待.gif"></img> -->
@@ -84,16 +84,16 @@
 	
 
 	<el-carousel arrow="never" indicator-position="none" 
-		height="900px" :autoplay="false"
+		height="420px" :autoplay="false"
 		ref="carousel">
 		
 		<el-button style="position:relative;
-				top:350px;right:500px;opacity:1.0;height:100px;width:200px;
-				font-size:50px;z-index:100;" 
+				top:250px;right:300px;opacity:1.0;height:50px;width:100px;
+				font-size:20px;z-index:100;" 
 			round type="primary" @click="prevSlide">上一篇</el-button>
 		<el-button style="position:relative;
-					top:350px;left:500px;opacity:1.0;height:100px;width:200px;
-					font-size:50px;z-index:100;" 
+					top:250px;left:300px;opacity:1.0;height:50px;width:100px;
+					font-size:20px;z-index:100;" 
 				round type="warning" @click="nextSlide">下一篇</el-button>  
 			  
 
@@ -104,27 +104,27 @@
 			
 			<el-main class="thirdBlock">
 				<el-row>
-					<div style="font-size:110px;font-family:'汉仪行楷';">{{item.text}}</div>
+					<div style="font-size:55px;font-family:'汉仪行楷';">{{item.text}}</div>
 				</el-row>
 				<el-row>
-					<div style="font-size:30px;">{{item.text2}}</div>
+					<div style="font-size:15px;">{{item.text2}}</div>
 				</el-row>
 				<el-row :gutter="10">
 				  <el-col :span="8" :offset="8">
-					<p style="font-size:45px;margin-top:10px;">朗诵者：{{item.zuozhe}}</p>
+					<p style="font-size:20px;margin-top:10px;">朗诵者：{{item.zuozhe}}</p>
 					<p v-html="item.其它内容"
-						style="text-align:left;font-size:55px;margin-top:10px;font-family:'';"></p>
+						style="text-align:left;font-size:25px;margin-top:40px;font-family:'';"></p>
 				  </el-col>
 				</el-row>
 			</el-main>
 			
 			<div v-if="item.type == 'video'">
 						<!-- <div style="height:50px"></div> -->
-				<video height=650 style="margin-top:-50px;" :src="item.url" controls="controls"></video>
+				<video height=300 style="margin-top:-50px;" :src="item.url" controls="controls"></video>
 			</div>
 			<div v-if="item.type == 'audio'">
 					<!-- <div style="height:150px"></div> -->
-				<audio style="transform:scale(2,2);" controls :src="item.url"></audio>
+				<audio style="transform:scale(1.3,1.3);" controls :src="item.url"></audio>
 			</div>		
 			<!-- <p style="position:absolute; left:600px;top:80px;
 				color:#ffff7f;
