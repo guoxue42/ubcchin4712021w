@@ -2,7 +2,7 @@
   <div id="app" @click="clickedEvent">
 
 
-  <Head style="position:fixed;z-index: 4;"></Head>
+  <Head style="position:fixed;z-index: 99999;"></Head>
   
 	<!--      <router-link to="/foo">Go to Foo</router-link>
     <router-link to="/bar">Go to Bar</router-link> -->

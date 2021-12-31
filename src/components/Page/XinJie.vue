@@ -63,8 +63,8 @@
 	<!-- #1 图片 -->
 	<!-- <div style="height:300px"></div> -->
 	<el-carousel arrow="always" 
-		indicator-position="none" 
-		height="2000px" :autoplay="false"
+		indicator-position="none"
+		:height="carouselHeight" :autoplay="false"
 		ref="carousel">
 		
 	  <el-carousel-item 
@@ -73,7 +73,7 @@
 		
 		<el-main class="thirdBlock">
 			<el-row>
-				<h1 style="font-size:50px;font-family:'春联行书字体';">{{item.title}}</h1>
+				<h1 style="font-size:50px;">{{item.title}}</h1>
 			</el-row>
 			<el-row>
 				<h1 > {{item.zuozhe}}</h1>
@@ -100,13 +100,13 @@
 	
 		<!-- </touch-ripple> -->
 		
+		<el-button round type="primary" @click="prevSlide">上一篇</el-button>
+		<el-button round type="warning" @click="nextSlide">下一篇</el-button>	  
 		
 	  </el-carousel-item>
 	</el-carousel>
 	
-	<el-button round type="primary" @click="prevSlide">上一篇</el-button>
-	<el-button round type="warning" @click="nextSlide">下一篇</el-button>	  
-    
+
 
 <!-- 	<el-main>
 		<el-row>
@@ -145,14 +145,26 @@
 				this.$refs.carousel.next()
 				// console.log(this.$refs.carousel.next())
 				document.documentElement.scrollTop = 0;
+				console.log(this.$refs.carousel)
 			},
 			prevSlide(){
 				this.$refs.carousel.prev()
 				document.documentElement.scrollTop = 0;
+				console.log(this.$refs.carousel)
+			},
+			callback(){
+				
+			}
+		},
+		computed:{
+			carouselHeight:function(){
+				
+				return "1300px";
 			}
 		},
 		data(){
 		  return {
+			  index: 0 ,
 			  // todos
 			  carousel: [
 				   {
@@ -290,7 +302,12 @@
 	}
 	
 	.el-button{
-		/* height:200px; */
+		position:relative;
+		opacity:1.0;
+		height:80px;
+		width:150px;
+		font-size:30px;
+		z-index:100;
 	}
 	
 	.el-carousel__item{
@@ -339,6 +356,10 @@
 		/* text-align: right; */
 		/* background-size:500px 350px; */
 		/* background-image:url(../../assets/桃花.jpg); */
+	}
+	
+	.el-main{
+		/* position:relative; */
 	}
 	
 </style>

@@ -84,15 +84,15 @@
 	
 
 	<el-carousel arrow="never" indicator-position="none" 
-		height="800px" :autoplay="false"
+		height="900px" :autoplay="false"
 		ref="carousel">
 		
-		<el-button style="position:absolute;
-				top:350px;left:550px;opacity:1.0;height:100px;width:200px;
+		<el-button style="position:relative;
+				top:350px;right:500px;opacity:1.0;height:100px;width:200px;
 				font-size:50px;z-index:100;" 
 			round type="primary" @click="prevSlide">上一篇</el-button>
-		<el-button style="position:absolute;
-					top:350px;right:550px;opacity:1.0;height:100px;width:200px;
+		<el-button style="position:relative;
+					top:350px;left:500px;opacity:1.0;height:100px;width:200px;
 					font-size:50px;z-index:100;" 
 				round type="warning" @click="nextSlide">下一篇</el-button>  
 			  
@@ -120,7 +120,7 @@
 			
 			<div v-if="item.type == 'video'">
 						<!-- <div style="height:50px"></div> -->
-				<video height=500 style="margin-top:-50px;" :src="item.url" controls="controls"></video>
+				<video height=650 style="margin-top:-50px;" :src="item.url" controls="controls"></video>
 			</div>
 			<div v-if="item.type == 'audio'">
 					<!-- <div style="height:150px"></div> -->
@@ -139,7 +139,7 @@
 	  </el-carousel-item>
 	</el-carousel>
 	
-	
+	<div style="height:150px"></div>
 
 <!-- 	<el-main>
 		<el-row>
