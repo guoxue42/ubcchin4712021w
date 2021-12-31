@@ -63,15 +63,14 @@
 		 
 	<!-- #1 图片 -->
 	<!-- <div style="height:300px"></div> -->
-	<el-carousel arrow="always" 
+<!-- 	<el-carousel arrow="always" 
 		indicator-position="none"
 		:height="carouselHeight" :autoplay="false"
 		ref="carousel">
 		
 	  <el-carousel-item 
 		v-for="item in carousel" :key="item.idx">
-		<!-- <touch-ripple :speed="1" :opacity="0.3" color="#fff" transition="ease"> -->
-		
+
 		<el-main class="thirdBlock">
 			<el-row>
 				<h1 style="font-size:50px;">{{item.title}}</h1>
@@ -81,17 +80,10 @@
 			</el-row>
 			<el-row :gutter="20">
 			  <el-col :span="22" :offset="1">
-				  <!-- <p style='font-size:30px; color:#000000;
-				  text-align:left; font-weight:bold;
-				  font-family:"宋体"' v-for="txt in item.text">
-					 &nbsp;&nbsp;{{txt}}
-				  </p> -->
 				  <p 
 				  v-html="item.text" style="text-align:left;
 					font-size:30px;
 				  "></p>
-				  <!-- <p v-html="item.text2" style="text-align:left;
-					font-size:20px;"></p> -->
 				  
 			  </el-col>
 			</el-row>
@@ -99,12 +91,37 @@
 			
 		</el-main>
 		
-	
-		<!-- </touch-ripple> -->
+		
 		
 
+
 	  </el-carousel-item>
-	</el-carousel>
+	</el-carousel> -->
+	
+	
+	<div class="thirdBlock">
+		<el-row>
+			<h1 style="font-size:50px;">{{carousel[activeIndex].title}}</h1>
+		</el-row>
+		<el-row>
+			<h1 style="margin-top:-30px;" > {{carousel[activeIndex].zuozhe}}</h1>
+		</el-row>
+		<el-row :gutter="20">
+		  <el-col :span="22" :offset="1">
+
+			  <p 
+			  v-html="carousel[activeIndex].text" style="text-align:left;
+				font-size:30px;
+			  "></p>
+			  
+			  
+		  </el-col>
+		</el-row>
+		
+		
+	</div>
+	
+	
 	
 		<div style="height:00px"></div>
 		
@@ -147,28 +164,34 @@
 				this.$router.push(e)
 			},
 			nextSlide(){
-				this.$refs.carousel.next()
+				// this.$refs.carousel.next()
 				// console.log(this.$refs.carousel.next())
 				document.documentElement.scrollTop = 0;
 				// console.log(this.$refs.carousel)
+				
+				this.activeIndex = this.activeIndex==this.carousel.length-1 ?0:this.activeIndex+1;
 				this.callback()
 			},
 			prevSlide(){
-				this.$refs.carousel.prev()
+				// this.$refs.carousel.prev()
 				document.documentElement.scrollTop = 0;
 				// console.log(this.$refs.carousel)
+				
+				this.activeIndex = this.activeIndex==0?this.carousel.length - 1:this.activeIndex-1;
 				this.callback()
 			},
 			callback(){
 				// console.log(this.$refs.carousel.activeIndex)
-				var activeIndex = this.$refs.carousel.activeIndex
-				// console.log(activeIndex)
-				// console.log(this.carousel[0].text)
-				// console.log(this.carousel[activeIndex].text)
-				var len1 = (this.carousel[0].text).length
-				var len2 = (this.carousel[activeIndex].text).length
-				// console.log(len2/len1)
-				this.carouselHeight = (380.0+1600.0*(len2)/len1)+"px"
+				
+				
+				// var activeIndex = this.$refs.carousel.activeIndex
+				// // console.log(activeIndex)
+				// // console.log(this.carousel[0].text)
+				// // console.log(this.carousel[activeIndex].text)
+				// var len1 = (this.carousel[0].text).length
+				// var len2 = (this.carousel[activeIndex].text).length
+				// // console.log(len2/len1)
+				// this.carouselHeight = (this.getInitialHeight*(len2)/len1)+"px";
 				
 				
 				console.log(this.$refs.routerViewBody)
@@ -180,12 +203,17 @@
 			// 	console.log(this.$refs.carousel)
 			// 	return "1300px";
 			// }
+			getInitialHeight:function(){
+				return 2*window.innerHeight;
+			},
+			item:function(){
+				return carousel[activeIndex];
+			}
 		},
 		data(){
 				  
 		  return {
-			  
-			  index: 0 ,
+			  activeIndex:0,
 			  // todos
 			  carouselHeight:"2000px",
 			  carousel: [
@@ -301,6 +329,14 @@
 </script>
 
 <style scoped>
+	
+	.fade-enter-active, .fade-leave-active {
+	  transition: opacity .5s;
+	}
+	.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+	  opacity: 0;
+	}
+
 	.fourthBlock{
 		height:100%;
 		background-color:#99A9BF;

@@ -90,13 +90,13 @@
 		<el-button style="position:relative;
 				top:250px;opacity:1.0;height:50px;width:100px;
 				font-size:20px;z-index:100;" 
-				:style='{right:videoWidth}'
+				:style='{right:videoWidth, top:pageHeightHalf}'
 			round type="primary" @click="prevSlide">上一篇</el-button>
 		<el-button style="position:relative;
-					top:250px;;opacity:1.0;height:50px;width:100px;
+					;opacity:1.0;height:50px;width:100px;
 					font-size:20px;z-index:100;" 
 					
-					:style='{left:videoWidth}'
+					:style='{left:videoWidth, top:pageHeightHalf}'
 				round type="warning" @click="nextSlide">下一篇</el-button>  
 			  
 
@@ -123,7 +123,7 @@
 			
 			<div v-if="item.type == 'video'">
 						<!-- <div style="height:50px"></div> -->
-				<video :height="videoHeight" style="margin-top:-50px;" :src="item.url" controls="controls"></video>
+				<video :width="videoSetWidth" style="margin-top:-50px;" :src="item.url" controls="controls"></video>
 			</div>
 			<div v-if="item.type == 'audio'">
 					<!-- <div style="height:150px"></div> -->
@@ -192,12 +192,26 @@
 				
 				return window.innerHeight-20 + "px";
 			},
-			videoHeight:function(){
-				return 0.8*window.innerHeight-20 + "px";
+			pageHeightHalf:function(){
+				
+				return window.innerHeight/2 + "px";
+			},
+			videoSetWidth:function(){
+				return 0.4*window.innerWidth-20 + "px";
 			},
 			videoWidth:function(){
 				return 0.3*window.innerWidth + "px";
 			},
+		},
+		mounted(){
+			const that = this;
+			window.onresize = ()=>{
+				console.log("HERE")
+				// window.innerWidth = document.body.clientWidth;
+				// window.innerHeight = document.body.clientHeight;
+				 this.$forceUpdate()
+				 
+			}
 		},
 		data(){
 		  return {

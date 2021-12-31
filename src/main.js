@@ -48,6 +48,7 @@ const routes = [
   { path: '/langSong', component: LangSong },
   { path: '/xinJie', component: XinJie },
   
+  
 ]
 
 const router = new VueRouter({ routes });
